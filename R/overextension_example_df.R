@@ -1,0 +1,27 @@
+#' Overextension Drug Data
+#'
+#' This dataset contains information related to ALM overextension assays.
+#' It includes measurements and details from experiments designed to study
+#' the effects of drug concentrations on the overextension phenotype.
+#'
+#' @format A data frame with rows representing individual observations
+#' and the following columns (adjust these based on your actual data):
+#' \describe{
+#'   \item{genotype}{the genotype of the animal studied. (C.elegan).}
+#'   \item{drug}{The name of the drug being tested.}
+#'   \item{concentration_mM}{The concentration of the drug used in the assay.}
+#'   \item{pnenotype}{The observed phenotypes.}
+#'   \item{countTotal}{The total of all the counts taken for each phenotype.}
+#'   \item{count1}{the number of observations for each phenotype for the first count.}
+#'   \item{count2}{the number of observations for each phenotype for the second count.}
+#'   \item{count3}{the number of observations for each phenotype for the third count.}
+#'   \item{count4}{the number of observations for each phenotype for the fourth count.}
+#'   \item{count5}{the number of observations for each phenotype for the fifth count.}
+#'   \item{avg}{the average of all the counts for each phenotype/drug/concentration combination.}
+#'   \item{stdev}{the standard deviation of all the counts for each phenotype/drug/concentration combination.}
+#'   \item{SE}{the standard error for all of the counts for each phenotype/drug/concentration combination.}
+#'   \item{date}{date the data was recorded, if necessary}
+#' }
+#' @source Data derived from the `Overextension_drug_example.xlsx` file
+#' located in the `inst/extdata/` directory of the Borg-kit package.
+"overextension_example_df"
