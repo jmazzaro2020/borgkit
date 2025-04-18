@@ -1,0 +1,30 @@
+Package: borgkit
+Title: The functions generates figures from data frames containing the results of common 
+    Borgen lab assays
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      "Joseph Mazzaro",
+      email = "mazzarojoseph8@gmail.com",
+      role = c("aut")
+    ),
+    person(
+      "Tim Crombie",
+      email = "tcrombie@fit.edu",
+      role = c("cre")
+    )
+  )
+Description: This package includes pre-written functions for use in Dr. Melissa A. Borgen's 
+    Neurobiology lab at the Florida Institute of Technology. These functions are for data 
+    visualization for the various assays that are commonly performed. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    ggplot2,
+    magrittr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.5)
