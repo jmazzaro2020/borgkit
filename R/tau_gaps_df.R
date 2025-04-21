@@ -14,4 +14,4 @@
 #'
 #' @source Data derived from the `tau_gaps.xlsx` file located in the `inst/extdata/` directory
 #' of the Borg-kit package.
-"tau_gaps"
+"tau_gaps_example_df"
