@@ -7,8 +7,8 @@
 #'   It should have columns named:
 #'   \itemize{
 #'     \item{\strong{genotype}}: A factor or character column representing the KO genotype
-#'     \item{\strong{gaps}}: A numeric column containing the number of gaps.
 #'     \item{\strong{day}}: A numeric or character column representing the day,
+#'     \item{\strong{gaps}}: A numeric column containing the number of gaps.
 #'     \item{\strong{error}}: A numeric column containing the error values for
 #'       the error bars.
 #'   }
@@ -38,13 +38,13 @@ tau_gap_bargraph <- function(data,
                                   #told me to make day a factor.
 
   #checking that the columns are correctly named
-  col_names <- c("genotype", "gaps", "day", "error")
+  col_names <- c("genotype", "day", "gaps", "error")
   missing_cols <- setdiff(col_names, colnames(data))
   if(length(missing_cols)>0) {
     stop("Error - The following columns are missing from the data:",
          paste(missing_cols, collapse = ", "))
   }
-  p <- ggplot2::ggplot(data,
+  plot <- ggplot2::ggplot(data,
                        ggplot2::aes(x = .data[["genotype"]],
                            y = .data[["gaps"]],
                            fill = .data[["day"]])) +
@@ -60,10 +60,8 @@ tau_gap_bargraph <- function(data,
     ) +
     ggplot2::theme_classic() +
     ggplot2::scale_fill_manual(values = c("1" = "grey60", "6" = "black")) +
-    if (!is.null(y_limits)) {
-      p <- p + ggplot2::scale_y_continuous(limits = y_limits)
-    }
+    ggplot2::scale_y_continuous(limits = y_limits)
 
-  return(p)
+  return(plot)
 }
 

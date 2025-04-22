@@ -17,8 +17,8 @@ tau_gap_bargraph(
 It should have columns named:
 \itemize{
 \item{\strong{genotype}}: A factor or character column representing the KO genotype
-\item{\strong{gaps}}: A numeric column containing the number of gaps.
 \item{\strong{day}}: A numeric or character column representing the day,
+\item{\strong{gaps}}: A numeric column containing the number of gaps.
 \item{\strong{error}}: A numeric column containing the error values for
 the error bars.
 }}
