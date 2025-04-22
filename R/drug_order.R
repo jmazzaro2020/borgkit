@@ -19,6 +19,12 @@
 set_drug_order <- function(n, drug_column, ...) {
   # ai gave me the ... idea
   drug_levels <- c(...)
+  missing_levels <- setdiff(drug_levels, unique(n[[drug_column]]))
+  if (length(missing_levels) > 0) {
+    warning("The following drug levels are not present in the data: ",
+            paste(missing_levels, collapse = ", "))
+  }
+
   n[[drug_column]] <- factor(n[[drug_column]], levels = drug_levels, ordered = TRUE)
 
   return(n)

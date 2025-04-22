@@ -22,6 +22,13 @@
 set_phenotype_order <- function(n, phenotype_column, ...) {
   # ai gave me the ... idea
   phenotype_levels <- c(...)
+
+  missing_levels <- setdiff(phenotype_levels, unique(n[[phenotype_column]]))
+  if (length(missing_levels) > 0) {
+    warning("The following drug levels are not present in the data: ",
+            paste(missing_levels, collapse = ", "))
+  }
+
   n[[phenotype_column]] <- factor(n[[phenotype_column]], levels = phenotype_levels, ordered = TRUE)
 
   return(n)

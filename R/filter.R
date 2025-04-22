@@ -14,8 +14,15 @@
 #' # run phenotype_filter_wt(data) and save it to a name you want to use
 
 phenotype_filter_wt <- function(n) {
-  if (is.null(n$phenotype)) {
-    print("Column 'phenotype' does not exist")
+
+  #check if the phenotype column exists
+   if (!"phenotype" %in% colnames(n)) {
+    stop("Column `phenotype` not found in the input data frame.")
+  }
+
+  #check if wt is present in the phenotype column
+  if (!"wt" %in% n$phenotype) {
+    warning("No rows with phenotype 'wt' found — nothing will be filtered.")
   }
   n %>%
     dplyr::filter(phenotype != "wt")

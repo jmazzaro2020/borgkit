@@ -11,7 +11,7 @@ and the following columns (adjust these based on your actual data):
 \item{genotype}{the genotype of the animal studied. (C.elegan).}
 \item{drug}{The name of the drug being tested.}
 \item{concentration_mM}{The concentration of the drug used in the assay.}
-\item{pnenotype}{The observed phenotypes.}
+\item{phenotype}{The observed phenotypes.}
 \item{countTotal}{The total of all the counts taken for each phenotype.}
 \item{count1}{the number of observations for each phenotype for the first count.}
 \item{count2}{the number of observations for each phenotype for the second count.}

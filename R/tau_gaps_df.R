@@ -6,7 +6,7 @@
 #'
 #' @format A data frame with each row representing an individual observation. The columns include:
 #' \describe{
-#'   \item{KO}{The genotype of the animal (knockout strain name).}
+#'   \item{genotype}{The genotype of the animal (knockout strain name).}
 #'   \item{day}{The experimental day on which the data was collected (either "1" or "6").}
 #'   \item{gaps}{The mean number of gaps observed for the given KO and day.}
 #'   \item{error}{The standard error associated with the gap count.}

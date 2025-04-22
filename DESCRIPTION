@@ -1,7 +1,7 @@
 Package: borgkit
 Title: The functions generates figures from data frames containing the results of common 
     Borgen lab assays
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(
       "Joseph Mazzaro",

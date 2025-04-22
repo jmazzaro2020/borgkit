@@ -94,7 +94,15 @@ overextension_stacked_bar <- function(data,
                                       error_bar_color = "black",
                                       facet_by = c("drug", "concentration_mM")) {
 
-  plot <- ggplot2::ggplot(data,
+  #checking that the columns are correctly named
+  col_names <- c("genotype", "phenotype", "countTotal", "SE")
+  missing_cols <- setdiff(col_names, colnames(data))
+  if(length(missing_cols)>0) {
+    stop("Error - The following columns are missing from the data:",
+         paste(missing_cols, collapse = ", "))
+  }
+
+   plot <- ggplot2::ggplot(data,
                           ggplot2::aes(x = .data[["genotype"]],
                               y = .data[["countTotal"]],
                               fill = .data[["phenotype"]])) +

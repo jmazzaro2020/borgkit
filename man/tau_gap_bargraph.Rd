@@ -8,14 +8,15 @@ tau_gap_bargraph(
   data,
   x_label = "Genotype",
   y_label = "# of Gaps",
-  plot_title = "your title here"
+  plot_title = "your title here",
+  y_limits = c(0, 5)
 )
 }
 \arguments{
 \item{data}{A data frame containing the data for the bar graph.
 It should have columns named:
 \itemize{
-\item{\strong{KO}}: A factor or character column representing the KO genotype
+\item{\strong{genotype}}: A factor or character column representing the KO genotype
 \item{\strong{gaps}}: A numeric column containing the number of gaps.
 \item{\strong{day}}: A numeric or character column representing the day,
 \item{\strong{error}}: A numeric column containing the error values for
@@ -27,6 +28,9 @@ the error bars.
 \item{y_label}{what you want to y axis to be labeled as}
 
 \item{plot_title}{what you want the title of the plot to be.}
+
+\item{y_limits}{what you want the scale of the y-axis to be based on the lowest and
+highest values for your gap data. The default is 0 to 5, or y_limits = c(0, 5)}
 }
 \value{
 A ggplot object representing the bar graph.
@@ -36,7 +40,9 @@ This function takes a data frame as input and generates a bar graph
 visualizing tau gap scores, grouped by KO type and day, with error bars.
 }
 \examples{
-#tau_gap_plot <- tau_gap_bargraph(tau_data, "KO", "Gaps", "Scoring Gaps in the Motor Cord")
+#tau_gap_plot <- tau_gap_bargraph(tau_data, "Genotype", "Gaps", "Scoring Gaps in the Motor Cord")
 #tau_gap_plot
+#If you have a value in the gaps column higher than 5, do the following:
+#tau_gap_bargraph(data, y_limits = c(0, 6))
 
 }
