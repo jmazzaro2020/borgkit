@@ -111,6 +111,7 @@ overextension_stacked_bar <- function(data,
                   ymax = if_else(row_number() == n(), cumulative + SE, NA_real_),
                   ymin = if_else(row_number() == n(), cumulative - SE, NA_real_)) %>%
     dplyr::ungroup()
+
    plot <- ggplot2::ggplot(data,
                           ggplot2::aes(x = .data[["genotype"]],
                               y = .data[["countTotal"]],
