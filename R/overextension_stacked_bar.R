@@ -43,45 +43,49 @@
 #' @examples
 #' # Example data
 #' data <- data.frame(
-#'   genotype = rep(c("A", "B"), each = 4),
-#'   phenotype = rep(c("severe", "mod"), each = 2, times = 2),
-#'   countTotal = c(20, 30, 15, 35, 25, 25, 10, 40),
-#'   SE = c(2, 3, 1.5, 3.5, 2.5, 2.5, 1, 4),
-#'   drug = factor(rep(c("Drug1", "None"), each = 4)),
-#'   concentration_mM = rep(c(1, 0), each = 4)
+#' genotype = c("A", "A", "A", "A", "A", "A",
+#'             "B", "B", "B", "B", "B", "B"),
+#' phenotype = c("severe", "mod", "wt", "severe", "mod", "wt",
+#'              "severe", "mod", "wt", "severe", "mod", "wt"),
+#' countTotal = c(20, 35, 30, 25, 15, 25, 20, 15, 30, 35, 20, 40),
+#' SE = c(2, 3.5, 3, 2.5, 1.5, 2.5, 3, 2,  1, 1.5, 2.5, 3.5),
+#' drug = factor(c("Drug1", "Drug1", "Drug1", "None", "None", "None",
+#'                "Drug1", "Drug1", "Drug1", "None", "None", "None")),
+#' concentration_mM = c(1, 1, 1, 0, 0, 0,
+#'                     1, 1, 1, 0, 0, 0)
 #' )
 #'
 #' # Basic stacked bar plot
-#' overextension_stacked_bar(data)
+#' #overextension_stacked_bar(data)
 #'
 #' # Stacked bar plot with custom labels and title
-#' overextension_stacked_bar(data,
-#'   x_label = "Genetic Variant",
-#'   y_label = "Number of Individuals",
-#'   plot_title = "Phenotype Distribution"
-#' )
+#' #overextension_stacked_bar(data,
+#' #   x_label = "Genetic Variant",
+#' #   y_label = "Number of Individuals",
+#' #  plot_title = "Phenotype Distribution"
+#' #)
 #'
 #' # Stacked bar plot with custom colors
-#' overextension_stacked_bar(data,
-#'   fill_colors = c("severe" = "red", "mod" = "lightblue")
-#' )
+#' #overextension_stacked_bar(data,
+#' #  fill_colors = c("severe" = "red", "mod" = "lightblue")
+#' #)
 #'
 #' # Different error bar appearance
-#' custom_error_bars_plot <- overextension_stacked_bar(data,
-#'   error_bar_width = 0.5,
-#'   error_bar_color = "darkgrey"
-#' )
+#' #custom_error_bars_plot <- overextension_stacked_bar(data,
+#' #  error_bar_width = 0.5,
+#' #  error_bar_color = "darkgrey"
+#' #)
 #'
 #' # Stacked bar plot without faceting
-#' overextension_stacked_bar(data, facet_by = NULL)
+#' #overextension_stacked_bar(data, facet_by = NULL)
 #'
 #' # Stacked bar plot faceted by multiple variables
-#' overextension_stacked_bar(data, facet_by = c("drug", "concentration_mM"))
+#' #overextension_stacked_bar(data, facet_by = c("drug", "concentration_mM"))
 #'
 #' # Faceting by only one variable
-#' facet_by_drug_plot <- overextension_stacked_bar(data,
-#'   facet_by = "drug"
-#' )
+#' #facet_by_drug_plot <- overextension_stacked_bar(data,
+#' #  facet_by = "drug"
+#' #)
 #'
 #' @importFrom ggplot2 ggplot
 #' @export
