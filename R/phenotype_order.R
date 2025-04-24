@@ -25,7 +25,7 @@ set_phenotype_order <- function(n, phenotype_column, ...) {
 
   missing_levels <- setdiff(phenotype_levels, unique(n[[phenotype_column]]))
   if (length(missing_levels) > 0) {
-    warning("The following drug levels are not present in the data: ",
+    warning("The following phenotype levels are not present in the data: ",
             paste(missing_levels, collapse = ", "))
   }
 
