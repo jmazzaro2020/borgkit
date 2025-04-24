@@ -2,6 +2,7 @@
 
 export(overextension_stacked_bar)
 export(phenotype_filter_wt)
+export(set_drug_order)
 export(set_phenotype_order)
 export(tau_gap_bargraph)
 importFrom(dplyr,filter)

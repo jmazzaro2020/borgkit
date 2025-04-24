@@ -10,6 +10,9 @@
 #'    quotation marks with a comma separating them.
 #' @return The input data frame with the 'drug' column converted to an **ordered factor**
 #'   with levels set according to the list provided for ...
+#'
+#' @export
+#'
 #' @examples
 #'
 #' # Example usage:
