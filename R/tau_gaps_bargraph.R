@@ -48,12 +48,15 @@ tau_gap_bargraph <- function(data,
   # I couldn't figure out how to fix my error bars.
   # AI said to get the stacked heights for error bars, and showed me how
   data <- data %>%
-    dplyr::group_by(across(c(genotype, !!!rlang::syms(facet_by)))) %>%
+    dplyr::group_by(genotype) %>%
     dplyr::arrange(phenotype, .by_group = TRUE) %>%
-    dplyr::mutate(cumulative = cumsum(countTotal),
-                  ymax = if_else(row_number() == n(), cumulative + SE, NA_real_),
-                  ymin = if_else(row_number() == n(), cumulative - SE, NA_real_)) %>%
+    dplyr::mutate(
+      cumulative = cumsum(countTotal),
+      ymax = if_else(row_number() == n(), cumulative + SE, NA_real_),
+      ymin = if_else(row_number() == n(), cumulative - SE, NA_real_)
+    ) %>%
     dplyr::ungroup()
+
 
   plot <- ggplot2::ggplot(data,
                        ggplot2::aes(x = .data[["genotype"]],
